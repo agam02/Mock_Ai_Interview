@@ -33,7 +33,8 @@ const Home = ({setShowLogin}) => {
             className="inline-flex gap-3 px-8 py-3.5 rounded-full cursor-pointer bg-gradient-to-r from-violet-600 to-fuchsia-500 hover:scale-105 transition-all duration-700"
           >
             {/* <img width={20} src={assets.upload_btn_icon} /> */}
-            <button onClick={token? ()=>navigate('/dashboard'):()=>setShowLogin(true)} className="text-white text-sm font-semibold">
+            {/* onClick={token? ()=>navigate('/dashboard'):()=>setShowLogin(true)} */}
+            <button className="text-white text-sm font-semibold"> 
               Get Started
             </button>
           </label>
