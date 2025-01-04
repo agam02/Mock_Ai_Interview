@@ -7,6 +7,7 @@ const Store = (props) => {
 
 
     const [token,setToken]=useState("");
+    const [showLogin,setShowLogin]=useState(false)
 
 
     useEffect(()=>{
@@ -17,7 +18,9 @@ const Store = (props) => {
 
     const contextValue={
       token,
-      setToken
+      setToken,
+      showLogin,
+      setShowLogin
     }
 
 

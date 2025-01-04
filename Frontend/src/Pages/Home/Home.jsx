@@ -4,8 +4,8 @@ import { AtomIcon, Edit, Share2 } from 'lucide-react';
 import React, { useContext } from 'react';  
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 
-const Home = ({setShowLogin}) => { 
-  const {token}=useContext(storeContext)
+const Home = () => { 
+  const {token,setShowLogin}=useContext(storeContext)
   const navigate=useNavigate()
   
   return(  
@@ -33,8 +33,7 @@ const Home = ({setShowLogin}) => {
             className="inline-flex gap-3 px-8 py-3.5 rounded-full cursor-pointer bg-gradient-to-r from-violet-600 to-fuchsia-500 hover:scale-105 transition-all duration-700"
           >
             {/* <img width={20} src={assets.upload_btn_icon} /> */}
-            {/* onClick={token? ()=>navigate('/dashboard'):()=>setShowLogin(true)} */}
-            <button className="text-white text-sm font-semibold"> 
+            <button onClick={token? ()=>navigate('/dashboard'):()=>setShowLogin(true)}className="text-white text-sm font-semibold"> 
               Get Started
             </button>
           </label>

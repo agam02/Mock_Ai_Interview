@@ -8,8 +8,9 @@ import { useEffect } from 'react';
 import { HashLink } from 'react-router-hash-link'; // Import HashLink
 
 
-const Header = ({setShowLogin}) => {
-  const{token,setToken}=useContext(storeContext)
+const Header = () => {
+  const{token,setToken,setShowLogin}=useContext(storeContext)
+  
 
   const navigate = useNavigate();
 

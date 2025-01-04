@@ -7,9 +7,9 @@ import { toast } from 'sonner'
 import { Button } from '../ui/button'
 
 
-const LoginPopup = ({ setShowLogin }) => {
+const LoginPopup = () => {
 
-    const {setToken}=useContext(storeContext)
+    const {setToken,setShowLogin}=useContext(storeContext)
 
     const [currState, setCurrState] = useState("Login")
 

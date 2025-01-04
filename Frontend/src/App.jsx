@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Pages/Home/Home';
 import Dashboard from './Pages/DashBoard/DashBoard';
@@ -8,13 +8,15 @@ import StartInterview from './Pages/Interview/StartInterview';
 import Feedback from './Pages/Interview/Feedback';
 import LoginPopup from './components/LoginPopUp/LoginPopup';
 import Protected from './components/Protected/Protected';
+import { storeContext } from './Context/Store';
 
 const App = () => {
-  const [showLogin,setShowLogin]=useState(false)
+  const {showLogin,setShowLogin}=useContext(storeContext)
   return (
     <>
-    {showLogin?<LoginPopup setShowLogin={setShowLogin}/>:<></>}
-    <Header setShowLogin={setShowLogin}/>
+
+    {showLogin?<LoginPopup/>:<></>}
+    <Header/>
     <Routes>
       <Route path="/" element={<Protected Component={Home}></Protected>}>
       <Route path="/dashboard"element={<Dashboard />}/>
