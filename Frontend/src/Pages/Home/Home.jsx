@@ -5,7 +5,9 @@ import React, { useContext } from 'react';
 import { Link, Navigate, useNavigate } from 'react-router-dom';
 
 const Home = () => { 
-  const {token,setShowLogin}=useContext(storeContext)
+  const {setShowLogin}=useContext(storeContext)
+  const token = localStorage.getItem('token');
+
   const navigate=useNavigate()
   
   return(  

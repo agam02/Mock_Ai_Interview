@@ -13,7 +13,7 @@ const RecordAnswerSection = ({ mockInterviewQuestion, activeQuestionIndex, inter
   const [userAnswer, setUserAnswer] = useState('');
   const [loading, setLoading] = useState(false);
 
-  const {token}=useContext(storeContext)
+  const token = localStorage.getItem('token');
 
   const {
     error,

@@ -7,7 +7,7 @@ import Interview from './Pages/Interview/Interview';
 import StartInterview from './Pages/Interview/StartInterview';
 import Feedback from './Pages/Interview/Feedback';
 import LoginPopup from './components/LoginPopUp/LoginPopup';
-import Protected from './components/Protected/Protected';
+// import Protected from './components/Protected/Protected';
 import { storeContext } from './Context/Store';
 
 const App = () => {
@@ -18,14 +18,11 @@ const App = () => {
     {showLogin?<LoginPopup/>:<></>}
     <Header/>
     <Routes>
-      <Route path="/" element={<Protected Component={Home}></Protected>}>
-      <Route path="/dashboard"element={<Dashboard />}/>
+      <Route path="/" element={<Home/>}/>
+      <Route path="/dashboard" element={<Dashboard/>}/>
       <Route path="/dashboard/interview/:mockId" element={<Interview/>}/>
       <Route path="/dashboard/interview/:mockId/start" element={<StartInterview/>}/>
       <Route path="/dashboard/interview/:mockId/feedback" element={<Feedback/>}/>
-      </Route>
-
-
     </Routes>
     </>
   );

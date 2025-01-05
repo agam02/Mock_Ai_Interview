@@ -11,12 +11,11 @@ import Store from './Context/Store.jsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  
     <Store>
     <BrowserRouter>
     <Toaster position="top-center"/>
       <App />
     </BrowserRouter>
     </Store>
-  </React.StrictMode>,
 )

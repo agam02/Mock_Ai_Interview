@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import {
     Dialog,
@@ -21,12 +21,12 @@ const AddNewInterview = () => {
     const [jobDesc, setJobDesc] = useState('');
     const [jobExp, setJobExp] = useState('');
     const [loading, setLoading] = useState(false);
-    const [jsonResponse, setJsonResponse] = useState('');
+    const [jsonResponse, setJsonResponse] = useState([]);
     const [mockId,setMockId]=useState('')
     const baseURL=process.env.URL;
     const navigate = useNavigate();
 
-    const {token}=useContext(storeContext);
+    const token = localStorage.getItem('token');
 
     const handleSubmit = async () => {
         try {
@@ -44,10 +44,13 @@ const AddNewInterview = () => {
       
           if (response.data.mockId) {
             setDialog(false);
+            setLoading(false)
             navigate(`/dashboard/interview/${response.data.mockId}`);
+            
           }
         } catch (error) {
           console.error("Error creating mock interview:", error);
+          setLoading(false)
         }
       };
       
@@ -65,15 +68,19 @@ const AddNewInterview = () => {
                 .replace('```json', '')
                 .replace('```', '');
 
-            setJsonResponse(mockJsonResp);
+           
             // console.log('Generated Mock Response:', JSON.parse(mockJsonResp));
-            handleSubmit(); // Trigger backend submission after AI response
+            if(mockJsonResp){
+            setJsonResponse(mockJsonResp);
+            } // Trigger backend submission after AI response
         } catch (error) {
             console.error('Error generating AI response:', error);
-        } finally {
-            setLoading(false);
-        }
+        } 
     };
+
+    useEffect(()=>{
+        handleSubmit()
+    },[jsonResponse])
   
 
     return (

@@ -6,7 +6,7 @@ import InterviewCard from '../InterviewCard/InterviewCard';
 const InterviewList = () => {
   const [interviewList,setInterviewList]=useState();
 
-  const {token}=useContext(storeContext);
+  const token = localStorage.getItem('token');
 
   const GetInterviewList = async () => {
     try {
