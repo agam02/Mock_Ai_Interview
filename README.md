@@ -24,10 +24,5 @@ Before you begin, ensure you have the following installed on your system:
 - **MongoDB** – For local or cloud database setup.
 - **Gemini AI API Key** – You will need to sign up for an API key from Gemini AI for mock interview functionalities.
 
-### Installation
 
-#### Backend (Express.js)
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/mockify-backend.git
-   cd mockify-backend
+
