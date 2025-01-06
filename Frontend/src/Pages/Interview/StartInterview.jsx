@@ -20,7 +20,9 @@ const StartInterview = () => {
   const GetInterviewDetails = async () => {
     
     try {
-        const response = await axios.get(`http://localhost:5000/api/mockInterview/${mockId}`);
+      const response = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/mockInterview/${mockId}`
+      );        
         const jsonMockResp=JSON.parse(response.data.jsonMockResp)
         setMockInterviewQuestion(jsonMockResp);
         console.log(jsonMockResp)

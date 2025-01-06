@@ -28,7 +28,7 @@ const LoginPopup = () => {
     const onLogin = async (event) => {
         event.preventDefault()
 
-        let new_url = "http://localhost:5000";
+        let new_url = process.env.REACT_APP_BACKEND_URL;
         if (currState === "Login") {
             new_url += "/api/login";
         }

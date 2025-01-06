@@ -10,14 +10,17 @@ const InterviewList = () => {
 
   const GetInterviewList = async () => {
     try {
-
-      const response = await axios.get("http://localhost:5000/api/mockInterviews",{ headers: {token}},);
-      console.log(response.data)
+      const response = await axios.get(
+        `${process.env.REACT_APP_BACKEND_URL}/api/mockInterviews`,
+        { headers: { token } }
+      );
+      console.log(response.data);
       setInterviewList(response.data);
     } catch (error) {
       console.error("Error fetching interviews:", error);
     }
   };
+  
 
   useEffect(() => {
     GetInterviewList();

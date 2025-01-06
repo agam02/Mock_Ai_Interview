@@ -104,9 +104,11 @@ const RecordAnswerSection = ({ mockInterviewQuestion, activeQuestionIndex, inter
                 activeQuestionIndex:(activeQuestionIndex+1).toString(),
             };
             console.log(requestBody)
-
-            const response = await axios.post('http://localhost:5000/api/userAnswer', requestBody,            { headers: {token}},
-              { headers: {token}});
+            const response = await axios.post(
+              `${process.env.REACT_APP_BACKEND_URL}/api/userAnswer`,
+              requestBody,
+              { headers: { token } }
+            );
 
             if (response.status === 201) {
                 toast('User Answer recorded successfully');

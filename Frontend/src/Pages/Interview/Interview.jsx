@@ -15,8 +15,10 @@ const Interview = () => {
 const GetInterviewDetails = async () => {
     
     try {
-        const response = await axios.get(`http://localhost:5000/api/mockInterview/${mockId}`);
-        console.log(response.data)
+        const response = await axios.get(
+            `${process.env.REACT_APP_BACKEND_URL}/api/mockInterview/${mockId}`
+          );
+        //   console.log(response.data)
         setInterviewDetails(response.data);
     } catch (error) {
         console.error('Error fetching interview details:', error);

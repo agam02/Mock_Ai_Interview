@@ -21,8 +21,8 @@ const Feedback = () => {
      try {
        // Call the Express API to fetch feedback
        const response = await axios.get(
-         `http://localhost:5000/api/userAnswer/mockId/${mockId}`
-       );
+        `${process.env.REACT_APP_BACKEND_URL}/api/userAnswer/mockId/${mockId}`
+      );
  
        if (response.status === 200) {
          console.log('Feedback List:', response.data);

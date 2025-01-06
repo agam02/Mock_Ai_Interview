@@ -32,7 +32,7 @@ const AddNewInterview = () => {
         try {
             console.log(jsonResponse)
           const response = await axios.post(
-            "http://localhost:5000/api/mockInterview",
+            `${process.env.REACT_APP_BACKEND_URL}/api/mockInterview`,
             {
               jsonMockResp: jsonResponse,
               jobPosition: jobPos,
