@@ -13,7 +13,6 @@ const StartInterview = () => {
   const [mockInterviewQuestion,setMockInterviewQuestion]=useState([])
 
   useEffect(() => {
-    console.log(mockId);
     GetInterviewDetails()
 }, []);
 
@@ -25,8 +24,6 @@ const StartInterview = () => {
       );        
         const jsonMockResp=JSON.parse(response.data.jsonMockResp)
         setMockInterviewQuestion(jsonMockResp);
-        console.log(jsonMockResp)
-        console.log(jsonMockResp.length)
         setInterviewData(response.data)
     } catch (error) {
         console.error('Error fetching interview details:', error);
@@ -34,8 +31,8 @@ const StartInterview = () => {
 };
    
   return (
-    <div className="mx-5 md:mx-20 lg:mx-36">
-    <div className='grid grid-cols-1 md:grid-cols-2 gap-10'>
+    <div className="mx-5 md:mx-20 lg:mx-35">
+    <div className='grid grid-cols-1 md:grid-cols-2 gap-12 max-h-[500px]'>
         {/* Questions  */}
         <QuestionsSection
         mockInterviewQuestion={mockInterviewQuestion}
@@ -49,7 +46,7 @@ const StartInterview = () => {
          interviewData={interviewData}
         />
     </div>
-    <div className='flex justify-end gap-4'>
+    <div className='flex justify-end gap-3 mb-3'>
       {activeQuestionIndex>0&&  
       <Button onClick={()=>setActiveQuestionIndex(activeQuestionIndex-1)}>Previous Question</Button>}
       {activeQuestionIndex!=mockInterviewQuestion?.length-1&& 

@@ -137,13 +137,13 @@ const RecordAnswerSection = ({ mockInterviewQuestion, activeQuestionIndex, inter
 
   return (
     <div className="flex items-center justify-center flex-col">
-      <div className="flex flex-col mt-20 bg-black justify-center items-center rounded-lg p-5">
+      <div className="flex flex-col mt-18 bg-black justify-center items-center rounded-lg p-5">
         <img src="/webcam.png" width={200} height={200} className="absolute" />
-        <Webcam style={{ height: 300, width: '100%', zIndex: 10 }} mirrored={true} />
+        <Webcam style={{ height: 300, width: 400, zIndex: 10 }} mirrored={true} />
       </div>
       <Button
         variant="outline"
-        className="my-10"
+        className="my-8"
         onClick={StartStopRecording}
         disabled={loading}
       >

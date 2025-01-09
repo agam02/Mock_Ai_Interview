@@ -25,7 +25,6 @@ const GetInterviewDetails = async () => {
     }
 };
     useEffect(() => {
-        console.log(mockId);
         GetInterviewDetails()
     }, []);
 

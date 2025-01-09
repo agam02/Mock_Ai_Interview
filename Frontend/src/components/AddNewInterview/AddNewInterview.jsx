@@ -68,8 +68,6 @@ const AddNewInterview = () => {
                 .replace('```json', '')
                 .replace('```', '');
 
-           
-            // console.log('Generated Mock Response:', JSON.parse(mockJsonResp));
             if(mockJsonResp){
             setJsonResponse(mockJsonResp);
             } // Trigger backend submission after AI response
